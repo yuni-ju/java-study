@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Course {
     private String courseName;
     private String[] students = new String[4];
@@ -8,6 +10,12 @@ public class Course {
     }
 
     public void addStudent(String student) {
+
+        if(numberOfStudents == students.length ){
+            String[] temp = new String[numberOfStudents*2];
+            System.arraycopy(students, 0, temp, 0, numberOfStudents);
+            students = temp;
+        }
         students[numberOfStudents] = student;
         numberOfStudents++;
     }
@@ -25,7 +33,29 @@ public class Course {
     }
 
     public void dropStudent(String student) {
-        // Left as an exercise in Exercise 10.9
+
+        int index, length;
+
+        for(int i=0;i<numberOfStudents;i++){
+            if(students[i]==student) {
+                index = i;
+                String[] temp = new String[--numberOfStudents];
+
+                System.arraycopy(students, 0, temp, 0, index);
+                length = numberOfStudents - index;
+                System.arraycopy(students, index + 1, temp, index, length);
+
+                students = temp;
+                break;
+            }
+            else if(students[i]==null) break;
+        }
+
+    }
+
+    public void clear(){
+        students = null;
+        numberOfStudents=0;
     }
 }
 
