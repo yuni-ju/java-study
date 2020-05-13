@@ -4,10 +4,6 @@ public class Account1 extends Account{
     private String name;
     ArrayList<Transaction> list = new ArrayList<>();
 
-    public Account1(){
-
-    }
-
     public Account1(String name, int id, double balance){
         super(id, balance);
         this.name = name;

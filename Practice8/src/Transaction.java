@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Transaction extends Account1{
+public class Transaction {
     private java.util.Date date;
     private char type;
     private double amount;
@@ -39,12 +39,10 @@ public class Transaction extends Account1{
         this.amount = amount;
     }
 
-    @Override
     public double getBalance() {
         return balance;
     }
 
-    @Override
     public void setBalance(double balance) {
         this.balance = balance;
     }

@@ -5,9 +5,9 @@ public class Practice8 {
 
     public static void main(String[] args) {
 
+        ArrayList<Transaction> list;
         Account1 user1 = new Account1("George", 1122, 1000);
         user1.setAnnualInterestRate(1.65);
-        ArrayList<Transaction> list;
 
         user1.deposit(30);
         user1.deposit(40);
@@ -19,7 +19,7 @@ public class Practice8 {
         list = user1.getList();
 
         System.out.println("Name : " + user1.getName());
-        System.out.println("Annual interest rate : " + user1.getAnnualInterestRate());
+        System.out.println("Annual interest rate : " + Account1.getAnnualInterestRate());
         System.out.println("Balance : " + user1.getBalance());
 
 
