@@ -1,48 +1,53 @@
-public class Circle extends GeometricObjectComparable {
+public class Circle extends GeometricObjectComparable{
 
-    protected double radius;
+        protected double radius;
 
-    public Circle() {
-    }
+        // Default constructor
+        public Circle() {
+            this(1.0, "white", 1.0);
+        }
 
-    public Circle(double radius){
-        this.radius = radius;
-    }
+        // Construct circle with specified radius
+        public Circle(double radius) {
 
-    public Circle(double radius, String color, double weight) {
-        this.radius = radius;
-    }
+            this.radius = radius;
+        }
 
-    @Override
-    public double getArea() {
-        return 0;
-    }
+        // Construct a circle with specified radius, weight, and color
+        public Circle(double radius, String color, double weight) {
 
-    @Override
-    public double getPerimeter() {
-        return 0;
-    }
+            this.radius = radius;
+        }
 
-    @Override
-    public boolean equals(Object circle) {
-        return this.radius == ((Circle) circle).getRadius();
-    }
+        // Getter method for radius
+        public double getRadius() {
+            return radius;
+        }
 
-    @Override
-    public String toString() {
-        return "[Circle] radius = " + radius;
-    }
+        // Setter method for radius
+        public void setRadius(double radius) {
+            this.radius = radius;
+        }
 
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
 
-    public double getRadius() {
-        return radius;
-    }
+        // Override the equals() method defined in the Object class
+        @Override
+        public boolean equals(Object circle) {
+            return this.radius == ((Circle)circle).getRadius();
+        }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
+        @Override
+        public String toString() {
+            return "[Circle] radius = " + radius;
+        }
+
+        @Override
+        public double getArea() {
+            return radius * radius * 3.14;
+        }
+
+        @Override
+        public double getPerimeter() {
+            return 2 * radius * 3.14;
+        }
 }

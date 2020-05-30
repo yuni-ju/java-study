@@ -1,22 +1,35 @@
 public class Square extends GeometricObjectComparable implements Colorable{
 
-    @Override
-    public double getArea() {
-        return 0;
+    private double side;
+
+    public Square() {
+
     }
 
-    @Override
-    public double getPerimeter() {
-        return 0;
+    public Square(double side) {
+        this.side = side;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return 0;
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
     }
 
     @Override
     public void howToColor() {
+        System.out.println("Color all four sides");
+    }
 
+    @Override
+    public double getArea() {
+        return side * side;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 4 * side;
     }
 }
