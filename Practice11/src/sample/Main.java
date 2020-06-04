@@ -21,7 +21,7 @@ public class Main extends Application {
         Arc arc1 = new Arc(300,300,200,200,0,72);
         Arc arc2 = new Arc(300,300,200,200,72,93.6);
         Arc arc3 = new Arc(300,300,200,200,72 + 93.6,100.8);
-        Arc arc4 =  new Arc(300,300,200,200,72 + 93.6 + 100.8,93.6);
+        Arc arc4 = new Arc(300,300,200,200,72 + 93.6 + 100.8,93.6);
 
         arc1.setFill(Color.RED);
         arc1.setType(ArcType.ROUND);
